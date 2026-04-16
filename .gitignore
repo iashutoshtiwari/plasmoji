@@ -29,5 +29,5 @@ data/*.db
 pkg/
 *.pkg.tar.zst
 *.pkg.tar.xz
-plasmoji/
+/plasmoji/
 *.src.tar.gz
