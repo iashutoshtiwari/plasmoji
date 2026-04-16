@@ -1,17 +1,17 @@
 # Maintainer: Ashutosh Tiwari <ashutosh@ashutoshtiwari.dev>
 
 pkgname=plasmoji-git
-pkgver=0.1.0
+pkgver=b526963
 pkgrel=1
 pkgdesc="A Wayland-native emoji, kaomoji, and GIF selector for KDE Plasma 6"
 arch=('any')
-url="https://github.com/ashutoshtiwari/plasmoji"
+url="https://github.com/iashutoshtiwari/plasmoji"
 license=('MIT')
 depends=('python' 'python-pyside6' 'wl-clipboard' 'wtype')
 makedepends=('git' 'python-setuptools' 'python-build' 'python-installer' 'python-wheel')
 provides=('plasmoji')
 conflicts=('plasmoji')
-source=("git+https://github.com/ashutoshtiwari/plasmoji.git")
+source=("git+https://github.com/iashutoshtiwari/plasmoji.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -42,7 +42,7 @@ package() {
   sed -i 's|ExecStart=.*|ExecStart=/usr/bin/plasmoji|' "$pkgdir/usr/lib/systemd/user/plasmoji.service"
 
   # 5. QML directory needs to be globally accessible if packaged via site-packages
-  # By default the pip install places qml/ parallel if included in wheel, but 
+  # By default the pip install places qml/ parallel if included in wheel, but
   # for safety we install the QML explicitly to the module directory if wheel misses it.
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   install -Dm644 qml/main.qml "$pkgdir$site_packages/plasmoji/main.qml"
