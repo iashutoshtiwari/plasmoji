@@ -1,0 +1,17 @@
+[Unit]
+Description=Plasmoji Wayland Daemon (Emoji & GIF Picker)
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+# Ensure Qt forces Wayland native mode
+Environment="QT_QPA_PLATFORM=wayland"
+# Adjust the ExecStart path to point to your installed binary or venv.
+# If installed via pip, it will typically be in ~/.local/bin/plasmoji
+ExecStart=/usr/bin/python3 -m plasmoji
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

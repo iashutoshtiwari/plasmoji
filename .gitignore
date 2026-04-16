@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+
+# Qt / PySide6
+*.qmlc
+*.jsc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (generated)
+data/*.db
+
+# Arch Linux AUR / makepkg artifacts
+pkg/
+*.pkg.tar.zst
+*.pkg.tar.xz
+plasmoji/
+*.src.tar.gz

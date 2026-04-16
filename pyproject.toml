@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools >= 68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plasmoji"
+version = "0.1.0"
+description = "Emoji, Kaomoji & GIF selector for KDE Plasma 6 / Wayland"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Ashutosh Tiwari", email = "ashutosh@ashutoshtiwari.dev" },
+]
+
+dependencies = [
+    "PySide6 >= 6.6",
+]
+
+[project.scripts]
+plasmoji = "plasmoji.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
